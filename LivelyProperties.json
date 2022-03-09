@@ -1,0 +1,280 @@
+{
+    "language": {
+        "text": "Language:",
+        "type": "dropdown",
+        "items": [
+            "English",
+            "German"
+        ],
+        "value": 0
+    },
+    "labelSpace0": {
+        "type": "label",
+        "value": ""
+    },
+    
+    
+    
+    "labelMinutes": {
+        "type": "label",
+        "value": "Minutes:"
+    },
+    "showMinutes": {
+        "text": "Show minutes",
+        "type": "checkbox",
+        "value": true
+    },
+    "minutesLineLength": {
+        "text": "Minutes line length:",
+        "type": "slider",
+        "min": 0,
+        "max": 512,
+        "step": 2,
+        "value": 64
+    },
+    "minutesLineWidth": {
+        "text": "Minutes line width:",
+        "type": "slider",
+        "min": 0,
+        "max": 16,
+        "step": 1,
+        "value": 4
+    },
+    "minutesColorGradient": {
+        "text": "Minutes color gradient",
+        "type": "checkbox",
+        "value": true
+    },
+    "minutesColor0": {
+        "text": "Minutes color 1:",
+        "type": "color",
+        "value": "#FF00FF"
+    },
+    "minutesColor1": {
+        "text": "Minutes color 2:",
+        "type": "color",
+        "value": "#00FFFF"
+    },
+    "labelSpace1": {
+        "type": "label",
+        "value": ""
+    },
+    
+    
+    "labelColorsAndAnimation": {
+        "type": "label",
+        "value": "Colors & Animation:"
+    },
+    "bgColor": {
+        "text": "Background color:",
+        "type": "color",
+        "value": "#000000"
+    },
+    "coloredWords": {
+        "text": "Colored words:",
+        "type": "checkbox",
+        "value": true
+    },
+    "randomColor": {
+        "text": "Changing word color:",
+        "type": "checkbox",
+        "value": false
+    },
+    "randomLetterColor": {
+        "text": "Changing letter color:",
+        "type": "checkbox",
+        "value": false
+    },
+    "randomColorBrightnessMin": {
+        "text": "Random color brightness min:",
+        "type": "slider",
+        "min": 0,
+        "max": 256,
+        "step": 1,
+        "value": 0
+    },
+    "randomColorBrightnessMax": {
+        "text": "Random color brightness max:",
+        "type": "slider",
+        "min": 0,
+        "max": 256,
+        "step": 1,
+        "value": 256
+    },
+    "activeColor": {
+        "text": "Active words color:",
+        "type": "color",
+        "value": "#A000A0"
+    },
+    "inactiveColor": {
+        "text": "Inactive words color:",
+        "type": "color",
+        "value": "#0A0A0A"
+    },
+    "inactiveHoverColor": {
+        "text": "Inactive words hover color:",
+        "type": "color",
+        "value": "#AF0000"
+    },
+    "hoverAni": {
+        "text": "Inactive words hover",
+        "type": "checkbox",
+        "value": true
+    },
+    "activeHueRotation": {
+        "text": "Active words color rotation:",
+        "type": "slider",
+        "min": 0,
+        "max": 360,
+        "step": 1,
+        "value": 180
+    },
+    "labelSpace2": {
+        "type": "label",
+        "value": ""
+    },
+    
+    
+    "labelAudio": {
+        "type": "label",
+        "value": "Audio:"
+    },
+    "audioVisualizing": {
+        "text": "Audio reactive",
+        "type": "checkbox",
+        "value": false
+    },
+    "audioSmooth": {
+        "text": "Audio smoothing:",
+        "type": "slider",
+        "min": 0.05,
+        "max": 1,
+        "step": 0.05,
+        "value": 0.25
+    },
+    "audioMultiplier": {
+        "text": "Audio multiplier:",
+        "type": "slider",
+        "min": 0.25,
+        "max": 16,
+        "step": 0.25,
+        "value": 1
+    },
+    "audioColor0": {
+        "text": "Audio color 1:",
+        "type": "color",
+        "value": "#00A0A0"
+    },
+    "audioColor1": {
+        "text": "Audio color 2:",
+        "type": "color",
+        "value": "#A000A0"
+    },
+    "invertAudioSpectrum": {
+        "text": "Invert audio spectrum",
+        "type": "checkbox",
+        "value": false
+    },
+    
+    "onlyActivatedAudio": {
+        "text": "Audio spectrum only for active words",
+        "type": "checkbox",
+        "value": true
+    },
+    
+    "labelSpace3": {
+        "type": "label",
+        "value": ""
+    },
+    
+    
+    "labelFonts": {
+        "type": "label",
+        "value": "Fonts:"
+    },
+    "fontSize": {
+        "text": "Font size:",
+        "type": "slider",
+        "min": 0,
+        "max": 256,
+        "step": 1,
+        "value": 30
+    },
+    "fontFamily": {
+        "text": "Font family:",
+        "type": "dropdown",
+        "value": 0,
+        "items": [
+            "Shay Man",
+            "Vultures",
+            "Orbitron",
+            "New Alphabet Two",
+            "Blanka Regular",
+            "ELIXIA",
+            "marske",
+            "UFONEST400",
+            "wormbox",
+            "sacred Geometry",
+            "Elianto",            
+            "xirod",
+            "Library 3am",
+            "Courier",
+            "Algerian",
+            "Consolas"
+        ]
+    },
+    "labelSpace4": {
+        "type": "label",
+        "value": ""
+    },
+    
+    
+    "labelGeneral": {
+        "type": "label",
+        "value": "General:"
+    },
+    /*
+    "autoClockSize": {
+        "text": "Auto clock sizing",
+        "type": "checkbox",
+        "value": true
+    },
+    "letterSpacingX": {
+        "text": "Letter spacing X:",
+        "type": "slider",
+        "min": 50,
+        "max": 200,
+        "step": 1,
+        "value": 80
+    },
+    "letterSpacingY": {
+        "text": "Letter spacing Y:",
+        "type": "slider",
+        "min": 50,
+        "max": 200,
+        "step": 1,
+        "value": 100
+    },
+    */
+    "offsetX": {
+        "text": "Clock offset X:",
+        "type": "slider",
+        "min": -265,
+        "max": 265,
+        "step": 1,
+        "value": 0
+    },
+    "offsetY": {
+        "text": "Clock offset Y:",
+        "type": "slider",
+        "min": -265,
+        "max": 265,
+        "step": 1,
+        "value": 0
+    },
+    "reload": {
+        "text": "Reload:",
+        "type": "button",
+        "value": "RELOAD"
+    }
+}

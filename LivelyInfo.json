@@ -1,0 +1,12 @@
+{
+  "AppVersion": "1.0.1",
+  "Title": "Wordclock",
+  "Thumbnail": "wordclock.png",
+  "Preview": "wordclock.gif",
+  "Desc": "Audio & cursor reactive word based clock with way to much settings... and support for English and German",
+  "Author": "Meph1sto666",
+  "License": null,
+  "Contact": "meph1st0666@gmx.de",
+  "Type": 2,
+  "FileName": "index.html"
+}

@@ -1,0 +1,143 @@
+:root {
+    --backgroundColor:      #000000FF;
+    /* --backgroundColor:      #FFFFFF; */
+    --fontFamily:           ShayMan;
+    --fontSize:             none;
+    --lettersHorizontal:    none;
+    --lettersVertical:      none;
+    --letterBoxHeight:      none;
+    --letterBoxWidth:       none;
+    --offsetX:              -50%;
+    --offsetY:              -50%;
+    
+    --activeColor:          #A000A0;
+    --inactiveColor:        #0A0A0A;
+    --inactiveHoverColor:   #AF0000FF;
+    --activeHueRotation:    360deg;
+    
+    --minute2:              none;
+    --minute1:              none;
+    --minute4:              none;
+    --minute3:              none;
+    
+    --hoverTransitionTime:  .1s; /*.1s*/
+    --transitionTime:       .1s; /*2s*/
+}
+
+* {
+    cursor: context-menu;
+}
+
+@font-face {
+    font-family: ShayMan;
+    src: url("../fonts/ShayManRegular/ShayManRegular.ttf");
+}
+@font-face {
+    font-family: vultures;
+    src: url("../fonts/vultures/vultures.ttf");
+}
+@font-face {
+    font-family: 'New Alphabet Two';
+    src: url('../fonts/NewAlphabetW95Two/NewAlphabetW95Two.ttf');
+}
+@font-face {
+    font-family: 'New Alphabet Dot';
+    src: url('../fonts/NewAlphabetW95Dot/NewAlphabetW95Dot.ttf');
+}
+@font-face {
+    font-family: 'New Alphabet Three';
+    src: url('../fonts/NewAlphabetW95Three/NewAlphabetW95Three.ttf');
+}
+@font-face {
+    font-family: 'Library 3am';
+    src: url('../fonts/Library3am/Library3am.otf');
+}
+@font-face {
+    font-family: 'xirod';
+    src: url('../fonts/xirod/xirod.ttf');
+}
+@font-face {
+    font-family: 'Blanka Regular';
+    src: url('../fonts/Blanka/Blanka-Regular.ttf');
+}
+@font-face {
+    font-family: 'ELIXIA';
+    src: url('../fonts/ELIXIA/ELIXIA.ttf');
+}
+@font-face {
+    font-family: 'marske';
+    src: url('../fonts/marske/Marske.ttf');
+}
+@font-face {
+    font-family: 'UFONEST400';
+    src: url('../fonts/UFONEST400/UFONEST400.ttf');
+}
+@font-face {
+    font-family: 'wormbox';
+    src: url('../fonts/wormbox/wormbox_sharp.ttf');
+}
+@font-face {
+    font-family: 'sacredGeometry';
+    src: url('../fonts/sacredGeometry/sacredgeometry.ttf');
+}
+@font-face {
+    font-family: 'Elianto';
+    src: url('../fonts/Elianto/Elianto-Regular.ttf');
+}
+
+body {
+    background-color: var(--backgroundColor);
+    overflow: hidden;
+    transition: var(--transitionTime);
+}
+
+#clockContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(var(--offsetX)) translateY(var(--offsetY));
+    
+    width: calc(var(--lettersHorizontal) * var(--letterBoxWidth));
+    transition: var(--transitionTime);
+}
+
+.letter {
+    /* background-color: var(--backgroundColor); */
+    background-color: #00000000;
+    height: var(--letterBoxHeight);
+    width: var(--letterBoxWidth);
+    border: none;
+    font-size: var(--fontSize);
+    font-family: var(--fontFamily);
+    text-align: center;
+    transition: var(--transitionTime);
+    outline: none;
+}
+
+.letter.inactive {
+    transition: var(--transitionTime);
+    color: var(--inactiveColor);
+}
+.letter.inactive:hover {
+    color: var(--inactiveHoverColor);
+    transition: var(--hoverTransitionTime);
+}
+
+.letter.active {
+    color: var(--activeColor);
+    transition: var(--transitionTime);
+    text-shadow: 0 0 10px;
+}
+.letter.active:hover {
+    filter: hue-rotate(var(--activeHueRotation));
+    transition: var(--hoverTransitionTime);
+}
+
+#minutes {
+    position: absolute;
+    float: left;
+    z-index: -1;
+    color: #00FFFF;
+    border-width: 5px;
+    transition: var(--transitionTime);
+}
