@@ -1,6 +1,9 @@
 # Wordclock
 The wallpaper is a clock that shows you the time in words instead of numbers like regular clocks.
 
+_Feel free to open an issue or share your feature ideas with me!
+
+
 ## Customizable features
 - Language
   - English (default)
