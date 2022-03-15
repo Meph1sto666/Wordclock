@@ -1,6 +1,5 @@
 :root {
     --backgroundColor:      #000000FF;
-    /* --backgroundColor:      #FFFFFF; */
     --fontFamily:           ShayMan;
     --fontSize:             none;
     --lettersHorizontal:    none;
@@ -13,12 +12,7 @@
     --activeColor:          #A000A0;
     --inactiveColor:        #0A0A0A;
     --inactiveHoverColor:   #AF0000FF;
-    --activeHueRotation:    360deg;
-    
-    --minute2:              none;
-    --minute1:              none;
-    --minute4:              none;
-    --minute3:              none;
+    --activeHueRotation:    180deg;
     
     --hoverTransitionTime:  .1s; /*.1s*/
     --transitionTime:       .1s; /*2s*/
@@ -140,4 +134,8 @@ body {
     color: #00FFFF;
     border-width: 5px;
     transition: var(--transitionTime);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* transform: translateX(var(--offsetX)) translateY(var(--offsetY)); */
 }

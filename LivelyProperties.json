@@ -1,6 +1,6 @@
 {
     "language": {
-        "text": "Language:",
+        "text": "Language",
         "type": "dropdown",
         "items": [
             "English",
@@ -17,7 +17,7 @@
     
     "labelMinutes": {
         "type": "label",
-        "value": "Minutes:"
+        "value": "Minutes"
     },
     "showMinutes": {
         "text": "Show minutes",
@@ -25,7 +25,7 @@
         "value": true
     },
     "minutesLineLength": {
-        "text": "Minutes line length:",
+        "text": "Minutes line length",
         "type": "slider",
         "min": 0,
         "max": 512,
@@ -33,7 +33,7 @@
         "value": 64
     },
     "minutesLineWidth": {
-        "text": "Minutes line width:",
+        "text": "Minutes line width",
         "type": "slider",
         "min": 0,
         "max": 16,
@@ -46,12 +46,12 @@
         "value": true
     },
     "minutesColor0": {
-        "text": "Minutes color 1:",
+        "text": "Minutes color 1",
         "type": "color",
         "value": "#FF00FF"
     },
     "minutesColor1": {
-        "text": "Minutes color 2:",
+        "text": "Minutes color 2",
         "type": "color",
         "value": "#00FFFF"
     },
@@ -63,30 +63,30 @@
     
     "labelColorsAndAnimation": {
         "type": "label",
-        "value": "Colors & Animation:"
+        "value": "Colors & Animation"
     },
     "bgColor": {
-        "text": "Background color:",
+        "text": "Background color",
         "type": "color",
         "value": "#000000"
     },
     "coloredWords": {
-        "text": "Colored words:",
+        "text": "Colored words",
         "type": "checkbox",
         "value": true
     },
     "randomColor": {
-        "text": "Changing word color:",
+        "text": "Changing word color",
         "type": "checkbox",
         "value": false
     },
     "randomLetterColor": {
-        "text": "Changing letter color:",
+        "text": "Changing letter color",
         "type": "checkbox",
         "value": false
     },
     "randomColorBrightnessMin": {
-        "text": "Random color brightness min:",
+        "text": "Random color brightness min",
         "type": "slider",
         "min": 0,
         "max": 256,
@@ -94,7 +94,7 @@
         "value": 0
     },
     "randomColorBrightnessMax": {
-        "text": "Random color brightness max:",
+        "text": "Random color brightness max",
         "type": "slider",
         "min": 0,
         "max": 256,
@@ -102,17 +102,17 @@
         "value": 256
     },
     "activeColor": {
-        "text": "Active words color:",
+        "text": "Active words color",
         "type": "color",
         "value": "#A000A0"
     },
     "inactiveColor": {
-        "text": "Inactive words color:",
+        "text": "Inactive words color",
         "type": "color",
         "value": "#0A0A0A"
     },
     "inactiveHoverColor": {
-        "text": "Inactive words hover color:",
+        "text": "Inactive words hover color",
         "type": "color",
         "value": "#AF0000"
     },
@@ -122,7 +122,7 @@
         "value": true
     },
     "activeHueRotation": {
-        "text": "Active words color rotation:",
+        "text": "Active words color rotation",
         "type": "slider",
         "min": 0,
         "max": 360,
@@ -137,7 +137,7 @@
     
     "labelAudio": {
         "type": "label",
-        "value": "Audio:"
+        "value": "Audio"
     },
     "audioVisualizing": {
         "text": "Audio reactive",
@@ -145,7 +145,7 @@
         "value": false
     },
     "audioSmooth": {
-        "text": "Audio smoothing:",
+        "text": "Audio smoothing",
         "type": "slider",
         "min": 0.05,
         "max": 1,
@@ -153,7 +153,7 @@
         "value": 0.25
     },
     "audioMultiplier": {
-        "text": "Audio multiplier:",
+        "text": "Audio multiplier",
         "type": "slider",
         "min": 0.25,
         "max": 16,
@@ -161,12 +161,12 @@
         "value": 1
     },
     "audioColor0": {
-        "text": "Audio color 1:",
+        "text": "Audio color 1",
         "type": "color",
         "value": "#00A0A0"
     },
     "audioColor1": {
-        "text": "Audio color 2:",
+        "text": "Audio color 2",
         "type": "color",
         "value": "#A000A0"
     },
@@ -190,18 +190,18 @@
     
     "labelFonts": {
         "type": "label",
-        "value": "Fonts:"
+        "value": "Fonts"
     },
     "fontSize": {
-        "text": "Font size:",
+        "text": "Font size",
         "type": "slider",
-        "min": 0,
-        "max": 256,
+        "min": -128,
+        "max": 128,
         "step": 1,
-        "value": 30
+        "value": 0
     },
     "fontFamily": {
-        "text": "Font family:",
+        "text": "Font family",
         "type": "dropdown",
         "value": 0,
         "items": [
@@ -231,33 +231,45 @@
     
     "labelGeneral": {
         "type": "label",
-        "value": "General:"
+        "value": "General"
     },
-    /*
-    "autoClockSize": {
+    /*"autoClockSize": {
         "text": "Auto clock sizing",
         "type": "checkbox",
         "value": true
-    },
-    "letterSpacingX": {
-        "text": "Letter spacing X:",
+    },*/
+    /*"spanOverScreen": {
+        "text": "Span clock over screen",
+        "type": "checkbox",
+        "value": false
+    },*/
+    
+    "width": {
+        "text": "Wallpaper width change",
         "type": "slider",
-        "min": 50,
-        "max": 200,
+        "min": -1024,
+        "max": 1024,
         "step": 1,
-        "value": 80
+        "value": 0
     },
-    "letterSpacingY": {
-        "text": "Letter spacing Y:",
+    "height": {
+        "text": "Wallpaper height change",
         "type": "slider",
-        "min": 50,
-        "max": 200,
+        "min": -1024,
+        "max": 1024,
         "step": 1,
-        "value": 100
+        "value": 0
     },
-    */
+    "scale": {
+        "text": "Wallpaper scale",
+        "type": "slider",
+        "min": 0,
+        "max": 2,
+        "step": 0.125,
+        "value": 1
+    },
     "offsetX": {
-        "text": "Clock offset X:",
+        "text": "Clock offset X",
         "type": "slider",
         "min": -265,
         "max": 265,
@@ -265,7 +277,7 @@
         "value": 0
     },
     "offsetY": {
-        "text": "Clock offset Y:",
+        "text": "Clock offset Y",
         "type": "slider",
         "min": -265,
         "max": 265,
@@ -273,7 +285,7 @@
         "value": 0
     },
     "reload": {
-        "text": "Reload:",
+        "text": "Reload",
         "type": "button",
         "value": "RELOAD"
     }

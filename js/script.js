@@ -5,7 +5,10 @@
  * 
  * You are free to do anything with the code as long you give credits to me.
  * 
- * V.1.0.1
+ * V.1.0.2
+ *
+ * Changes: 
+ *  - added options to change clock size (x, y), scale and updated auto size algorythm
  */
 
 // ===SETTINGS===
@@ -40,7 +43,7 @@ var settings = {
     SHOW_MINUTES: true,
     
     AUTO_SIZE: true,
-    COLORED_WORDS: false,
+    COLORED_WORDS: true,
     RANDOM_COLOR: false,
     RANDOM_LETTER_COLOR: false,
     RANDOM_MINUTES_COLOR: false,
@@ -61,7 +64,13 @@ var settings = {
         },
         
         VISUALIZE_COLOR_0: "#00FFFF",
-        VISUALIZE_COLOR_1: "#FF00FF"
+        VISUALIZE_COLOR_1: "#FF00FF",
+        
+        SCALE: 1,
+        OFFSET_X: 0,
+        OFFSET_Y: 0,
+        SPANN_ACROSS_SCREEN: false,
+        FONT_SIZE_CHANGE: 0
     },
     AUDIO_VISUALIZING: false,
     AUDIO_SMOOTH: 0.5,
@@ -100,16 +109,22 @@ function livelyPropertyListener(name, val) {
         case "randomLetterColor": settings.RANDOM_LETTER_COLOR = val; break;
         case "randomColorBrightnessMin": settings.RANDOM_COLOR_BRIGHTNESS_MIN = val; break;
         case "randomColorBrightnessMax": settings.RANDOM_COLOR_BRIGHTNESS_MAX = val; break;
+        
+        case "autoClockSize": settings.AUTO_SIZE = val; break;
+        case "spanOverScreen": settings.STYLE.SPANN_ACROSS_SCREEN = val; break;
         case "offsetX": setStyle("--offsetX", `${val - 50}%`); break;
         case "offsetY": setStyle("--offsetY", `${val - 50}%`); break;
+        case "width": settings.STYLE.OFFSET_X = val; break;
+        case "height": settings.STYLE.OFFSET_Y = val; break;
+        case "scale": settings.STYLE.SCALE = val; break;
         
         case "hoverAni": settings.INACTIVE_HOVER_ANIMATION = val; break;
-        case "autoClockSize": autoClockSize(); break;
+        // case "autoClockSize": autoClockSize(); break;
         case "activeHueRotation": setStyle("--activeHueRotation", val + "deg"); break;
         
         // fonts
         case "fontFamily": setStyle("--fontFamily", settings.PROPERTY_LISTENER.FONTS[val]); break;
-        case "fontSize": setStyle("--fontSize", `${val}px`); break;
+        case "fontSize": settings.STYLE.FONT_SIZE_CHANGE = val; break;
         
         // minutes
         case "showMinutes": settings.SHOW_MINUTES = val; break;
@@ -277,12 +292,14 @@ function autoClockSize() {
     let lettersVertical = getStyle("--lettersVertical");
     let correctionX = 0;
     let correctionY = 0;
-    let height = Math.floor(screen.height / parseInt(lettersVertical.replace("px", "")) + correctionX);
-    let width = Math.floor(screen.height / parseInt(lettersHorizontal.replace("px", "")) + correctionY);
-    setStyle("--letterBoxHeight", height + "px");
-    setStyle("--letterBoxWidth", width + "px");
-    if (settings.LANG == "german") setStyle("--fontSize", width / 2 + "px");
-    else setStyle("--fontSize", width + "px");
+    let height = Math.floor(screen.height / parseInt(lettersVertical.replace("px", "")) + correctionY) * settings.STYLE.SCALE;
+    if (settings.STYLE.SPANN_ACROSS_SCREEN) width = Math.floor(screen.width / parseInt(lettersHorizontal.replace("px", "")) + correctionX) * settings.STYLE.SCALE;
+    else width = Math.floor(screen.height / parseInt(lettersHorizontal.replace("px", "")) + correctionX) * settings.STYLE.SCALE;
+    setStyle("--letterBoxWidth", width + settings.STYLE.OFFSET_X + "px");
+    setStyle("--letterBoxHeight", height + settings.STYLE.OFFSET_Y + "px");
+    
+    if (settings.LANG == "german") setStyle("--fontSize", height / 2 + settings.STYLE.FONT_SIZE_CHANGE + "px");
+    else setStyle("--fontSize", (height / 2) + settings.STYLE.FONT_SIZE_CHANGE + "px");
 }
 
 function setStyle(cssVar, value) {
@@ -434,9 +451,16 @@ function drawMinute(minutes, seconds) {
     let correctionY = 0;
     let lettersHorizontal = getStyle("--lettersHorizontal");
     let lettersVertical = getStyle("--lettersVertical");
-    canvas.height = Math.floor(screen.height / parseInt(lettersVertical.replace("px", "")) + correctionX) * lettersVertical;
-    canvas.width = Math.floor(screen.height / parseInt(lettersHorizontal.replace("px", "")) + correctionY) * lettersHorizontal;
     
+    let height = Math.floor(screen.height / parseInt(lettersVertical.replace("px", "")) + correctionX);
+    if (settings.STYLE.SPANN_ACROSS_SCREEN) width = Math.floor(screen.width / parseInt(lettersHorizontal.replace("px", "")) + correctionY) * parseInt(lettersHorizontal.replace("px", ""));
+    else width = Math.floor(screen.height / parseInt(lettersHorizontal.replace("px", "")) + correctionY);
+    
+    width = (width * settings.STYLE.SCALE + settings.STYLE.OFFSET_X) * parseInt(lettersHorizontal.replace("px", ""));
+    height = (height * settings.STYLE.SCALE + settings.STYLE.OFFSET_Y) * parseInt(lettersVertical.replace("px", ""));
+    
+    canvas.height = height;
+    canvas.width = width;
     // style = getComputedStyle(document.querySelector("#minutes"));
     if (settings.STYLE.MINUTES.GRADIENT) {
         grd = ctx.createLinearGradient(0,0, canvas.width, canvas.height);
